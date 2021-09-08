@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktika 1</title>
+</head>
+<body>
+    <script>
+        /*let user ={
+            name: "Jhon",
+            go: function (){
+                alert(this.name)
+            }
+        }
+        user.go() // Jhon chygat
+        */
+
+        /*function makeUser(){
+            return {
+                name: "Jhon",
+                ref(){ //ref: function(){}
+                    return this;
+                },
+            };
+        }
+        let user = makeUser();
+        console.log(user.ref().name)
+        */
+
+       /* let calculator = {
+            read(){
+                this.num1 = +prompt("Enter a 1st number", 0)
+                //+ prompt ka jazylgandy number katary kaitarat,
+                //antpese string bolup kalat
+                this.num2 = +prompt("Enter a 2nd number", 0)
+            },
+            sum(){
+                return this.num1 + this.num2
+            },
+            multiply(){
+                return this.num1 * this.num2 
+            }
+        }
+        calculator.read()
+        alert (calculator.sum())
+        alert (calculator.multiply())
+        */
+       // oidodogu calculatordy Constructor function menen kyluu
+
+        function Calculator() {
+            this.read = function(){
+                this.num1 = +prompt("Enter a 1st number", 0);
+                this.num2 = +prompt("Enter a 2nd number", 0);
+            }
+            this.sum = function(){
+                return this.num1 + this.num2;
+            }
+            this.multiply = function(){
+                return this.num1 * this.num2 ;
+            }
+        }   
+       let calculator = new Calculator()
+
+       calculator.read()
+       alert(calculator.sum())
+       alert(calculator.multiply())
+
+    </script>
+</body>
+</html>

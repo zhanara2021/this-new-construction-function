@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manager</title>
+</head>
+<body>
+    <script>
+       const John = {
+            name: "John",
+            sales: 10,
+            sell: function(thing){
+                this.sales += 1;
+                return "Manager " + this.name + " sold " + thing
+            },
+        }
+
+        console.log(John.sales);
+        console.log(John.sell("Apple"));
+        console.log(John.sell("Banan"));
+        console.log(John.sell("Oruk"));
+
+        console.log(John.sales);
+
+        const Nurs = {
+            name: "Nurs",
+            sales: 5,
+            sell: function(thing){
+                this.sales += 1;
+                return "Manager " + this.name + " sold " + thing
+            },
+        };
+        console.log(Nurs.sales);
+        console.log(Nurs.sell("Apple"));
+        console.log(Nurs.sell("Banan"));
+        console.log(Nurs.sell("Oruk"));
+
+        console.log(Nurs.sales);
+
+
+        // ustundogunun Constructor menen chygarylysgy, kod kyskardy
+        const Manager = function (name , sales) {
+            this.name = name;
+            this.sales = sales;
+        };
+
+        Manager.prototype.sell = function (thing) {
+            // murastoo managerdin kopiasyn alip icine sell 
+            // degen funkcia actyk(metod kowtuk)
+            this.sales += 1
+            return "Manager" + this.name + "sold" + thing
+        };
+
+        const Johnson = new Manager(" Johnson ", 10)
+        const Nursultan = new Manager(" Nursultan ", 20)
+
+        console.log(Johnson.sales, Nursultan.sales)
+        console.log(Johnson.sell(" Juzum "));
+        console.log(Nursultan.sell(" Kurut "));
+        console.log(Johnson.sales, Nursultan.sales)
+
+    </script>
+</body>
+</html>
